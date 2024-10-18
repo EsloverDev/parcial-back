@@ -44,9 +44,18 @@ const participantes = [
     }
 ]
 
+router.post('/eventos/crear', (req, res) => {
+    respuesta.success(req, res, 200, "Evento creado");
+})
+
 router.get('/eventos', (req, res) => {
     console.log("Lista de eventos: ", eventos);
-    respuesta.success(req, res, 200, "Eventos mostrados en la consola");
+    respuesta.success(req, res, 200, eventos);
+})
+
+router.get('/participantes', (req, res) => {
+    console.log("Participantes: ", participantes)
+    respuesta.success(req, res, 200, participantes);
 })
 
 module.exports = router;
